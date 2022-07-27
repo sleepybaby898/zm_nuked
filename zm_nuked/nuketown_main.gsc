@@ -25,6 +25,7 @@
 
 #include scripts\zm\zm_nuked\stuff\watcher;
 #include scripts\zm\zm_nuked\stuff\machines;
+#include scripts\zm\zm_nuked\stuff\generators;
 #include scripts\zm\zm_nuked\config;
 
 main()
@@ -44,6 +45,7 @@ init()
     level.zombie_weapons["ray_gun_zm"].is_in_box = false;
     iprintln("Nuketown - Custom by SLU");
     thread init_special();
+    thread scripts\zm\zm_nuked\stuff\generators::gen_init();
     thread scripts\zm\zm_nuked\stuff\watcher::watcher_init();
 }
 
