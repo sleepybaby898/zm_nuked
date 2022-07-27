@@ -47,6 +47,7 @@ init()
     thread init_special();
     thread scripts\zm\zm_nuked\stuff\generators::gen_init();
     thread scripts\zm\zm_nuked\stuff\watcher::watcher_init();
+    thread scripts\zm\zm_nuked\stuff\mark2::frame_init();
 }
 
 init_special()
@@ -55,7 +56,6 @@ init_special()
         mannequincounter();
     }
 }
-
 mannequincounter()
 {
     self endon("disconnect");
@@ -88,6 +88,5 @@ init_nuked_perks_nothing() {
 }
 
 perks_from_the_sky_nothing() {
-    level thread maps\mp\zm_nuked_perks::turn_perks_on();
     print("lol");
 }

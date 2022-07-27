@@ -23,37 +23,37 @@
 #include maps\mp\zombies\_zm_perk_electric_cherry;
 #include maps\mp\zm_nuked_perks;
 
-gen_init() {
-    pos = (-640.201, 241.014, -58.2143);
-    trigger = spawn("trigger_radius", pos, 1, 30, 30);
-    
-    trigger setvisibletoall();
+#include scripts\zm\zm_nuked\stuff\mark2melt;
 
-    wait(1);
 
-    for(;;)
-    {   
-        trigger waittill("trigger", player);
-        printf("collision");
-        if (player meleebuttonpressed() || player AttackButtonPressed()) {
-            setdvar("power", "1");
-            level thread maps\mp\zm_nuked_perks::turn_perks_on();
-            printf("UseButton");
-            iprintln("Power enabled!");
-            self notify("collect_item");
-            self PlaySound("zmb_poweron");
-            trigger delete();
+frame_init() {
+    for(;;) {
+        if(getdvar("timerhudshow") == "0") {
+            player.framepickedup = 0;
+            player.melteddown = 0;
+            position = (719.192, 328.28, 91.2964);
+
+            trigger = spawn("trigger_radius", position, 1, 30, 30);
+            trigger setcursorhint("HINT_ACTIVATE", trigger);
+            trigger sethintstring("Press ^3&&1^7 to pick up the MK II mould.");
+            trigger setvisibletoall();
+
+            wait(1);
+
+            for(;;) {
+                trigger waittill("trigger", player);
+                if(player UseButtonPressed()) {
+                    player.framepickedup = 1;
+                    iprintln("The mould was picked up");
+                    trigger delete();
+                    thread scripts\zm\zm_nuked\stuff\mark2melt::melt();
+                }
+                wait 0.05;
+            }
         }
         wait 0.05;
     }
+
 }
 
-SpawnHint( origin, width, height, cursorhint, string )
-{
-    hint = spawn( "trigger_radius", origin, 1, width, height );
-    hint setcursorhint( cursorhint, hint );
-    hint sethintstring( string );
-    hint setvisibletoall();
-    wait 0.05;
-    hint delete();
-}
+// maps/zombie/fx_zmb_nuke_reentry
