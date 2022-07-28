@@ -10,7 +10,7 @@
 
 watcher_init() {
 	level waittill("connected", player); // HAS to be done after player spawns
-    player.score = 696969;
+    player.score = 1500;
     if(getdvar("the_watcher") == "1") {
         if(getdvar("enable_mannequins") == "1") {
             while (true)
