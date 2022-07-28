@@ -36,7 +36,6 @@ main()
     if(getdvar("enable_perks") == "1") {
         replaceFunc(maps\mp\zm_nuked_perks::init_nuked_perks, ::init_nuked_perks_nothing);
         replaceFunc(maps\mp\zm_nuked_perks::perks_from_the_sky, ::perks_from_the_sky_nothing);
-        level thread playchalkfx("wall_bowie", (-1380, 1085, -69.5062), (0, 270, 0 ));
     }
 }
 
