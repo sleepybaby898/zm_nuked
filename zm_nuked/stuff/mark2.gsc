@@ -28,7 +28,7 @@
 
 frame_init() {
     for(;;) {
-        if(getdvar("timerhudshow") == "0") {
+        if(getdvar("timerhudshow") == "0" && getdvar("power") == "1" && player hasweapon("ray_gun_zm")) {
             player.framepickedup = 0;
             player.melteddown = 0;
             position = (719.192, 328.28, 91.2964);
@@ -51,6 +51,7 @@ frame_init() {
                 }
                 wait 0.05;
             }
+            break;
         }
         wait 0.05;
     }

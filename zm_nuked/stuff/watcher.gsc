@@ -10,12 +10,12 @@
 
 watcher_init() {
 	level waittill("connected", player); // HAS to be done after player spawns
-    player.score = 1500;
+    player.score = 696969;
     if(getdvar("the_watcher") == "1") {
         if(getdvar("enable_mannequins") == "1") {
             while (true)
             {
-                if (level.mannequin_count <= 0)
+                if (level.mannequin_count <= 26)
                 {
                     iprintln("You collected all the mannequins! All players' get ray gun!");
                     setdvar("timerhudshow", "0");

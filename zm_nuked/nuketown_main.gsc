@@ -45,6 +45,7 @@ init()
         level.start_weapon = getdvar("start_weap"); 
     }
     level.zombie_weapons["ray_gun_zm"].is_in_box = false;
+    level.zombie_weapons["m32_zm"].is_in_box = false;
     iprintln("Nuketown - Custom by SLU");
     thread init_special();
     thread scripts\zm\zm_nuked\stuff\generators::gen_init();
