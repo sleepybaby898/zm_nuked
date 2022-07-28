@@ -43,6 +43,9 @@ melt() {
                 }
                 iprintln("You got the mark 2!");
                 trig delete();
+                setdvar("timerhudshow", "1");
+                player.framepickedup = 0;
+                break;
             }
         }
         wait 0.05;

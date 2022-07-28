@@ -47,6 +47,7 @@ frame_init() {
                     iprintln("The mould was picked up");
                     trigger delete();
                     thread scripts\zm\zm_nuked\stuff\mark2melt::melt();
+                    break;
                 }
                 wait 0.05;
             }

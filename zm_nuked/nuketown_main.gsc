@@ -27,6 +27,8 @@
 #include scripts\zm\zm_nuked\stuff\machines;
 #include scripts\zm\zm_nuked\stuff\generators;
 #include scripts\zm\zm_nuked\config;
+#include scripts\zm\zm_nuked\stuff\counter;
+#include scripts\zm\zm_nuked\stuff\bunker;
 
 main()
 {
@@ -48,6 +50,8 @@ init()
     thread scripts\zm\zm_nuked\stuff\generators::gen_init();
     thread scripts\zm\zm_nuked\stuff\watcher::watcher_init();
     thread scripts\zm\zm_nuked\stuff\mark2::frame_init();
+    thread scripts\zm\zm_nuked\stuff\counter::onPlayerConnect();
+    thread scripts\zm\zm_nuked\stuff\bunker::bunker_think();
 }
 
 init_special()
