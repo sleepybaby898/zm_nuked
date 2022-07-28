@@ -36,6 +36,7 @@ main()
     if(getdvar("enable_perks") == "1") {
         replaceFunc(maps\mp\zm_nuked_perks::init_nuked_perks, ::init_nuked_perks_nothing);
         replaceFunc(maps\mp\zm_nuked_perks::perks_from_the_sky, ::perks_from_the_sky_nothing);
+        level thread playchalkfx("wall_bowie", (-1380, 1085, -69.5062), (0, 270, 0 ));
     }
 }
 
@@ -65,6 +66,7 @@ mannequincounter()
 {
     self endon("disconnect");
     level endon("end_game");
+    level waittill( "start_of_round" );
 
     setdvar("timerhudshow", "1");
 
@@ -73,7 +75,7 @@ mannequincounter()
 	timer_hud.alpha = 1;
 	timer_hud.color = (1, 0.6, 0.2);
 	timer_hud.hidewheninmenu = 1;
-    timer_hud.label = &"Remaining mannequins: ";
+    timer_hud.label = &"Remaining Mannequins: ";
 
     while (True)
     {

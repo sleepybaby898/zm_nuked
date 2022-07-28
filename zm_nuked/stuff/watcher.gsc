@@ -15,7 +15,7 @@ watcher_init() {
         if(getdvar("enable_mannequins") == "1") {
             while (true)
             {
-                if (level.mannequin_count <= 26)
+                if (level.mannequin_count <= 0)
                 {
                     iprintln("You collected all the mannequins! All players' get ray gun!");
                     setdvar("timerhudshow", "0");
