@@ -15,3 +15,6 @@ DO NOT CHANGE FILE OR FOLDER NAMES. LEAVE EVERYTHING THE SAME
 Before you start playing, make sure to check the config.gsc file inside the zm_nuked folder and set the variables to your liking. There is an uncompiled version inside this repo too, and atomtown is free for use.
 
 Enjoy!
+
+
+## THANK YOU TO JEZUZ LIZARD FOR ALL THE HELP HE'S DONE!
